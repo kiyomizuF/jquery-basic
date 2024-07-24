@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // function()とアロー関数の用途の違いについて。基本同一だが、thisを使用した時の参照元が変わる。
+      value = "グローバル";
+
+      const obj = {
+        value: "オブジェクト",
+        testFunction: function () {
+          console.log("関数宣言の値は:", this.value);
+        },
+        arrowFunction: () => {
+          console.log("アロー関数の値は:", this.value);
+        },
+      };
+
+      obj.testFunction();
+      obj.arrowFunction();
+    </script>
+  </body>
+</html>
